@@ -1,0 +1,7 @@
+<h4>Posts List</h4>
+
+<ol>
+  <li *ngFor="let post of postsList"> 
+    <a href="JavaScript:void(0);" (click)="showDetailPost(post.id)"> {{post.title}} </a>
+  </li>
+</ol>

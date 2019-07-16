@@ -1,0 +1,31 @@
+
+<h4>Post Details</h4>
+
+<div>
+  <p><b>Title: </b> {{postDetails.title}} </p>
+
+  <p><b>Details: </b> {{postDetails.body}} </p>
+</div>
+
+
+<button 
+  type="button" 
+  *ngIf="! isShowComment" 
+  (click)="showComments()"
+  > Show comments </button>
+
+<button 
+  type="button" 
+  *ngIf="isShowComment" 
+  (click)="isShowComment = false"
+  > Hide comments </button>
+
+<button type="button" class="delete_btn" (click)="deletePost()">Delete post</button> <br><br>
+
+
+
+<ol *ngIf="isShowComment">
+  <li *ngFor="let comment of commentsList">
+      <a href="JavaScript:void(0);"> {{comment.name}} </a>
+  </li>
+</ol>
